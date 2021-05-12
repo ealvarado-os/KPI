@@ -7,3 +7,5 @@ npm i -g
 
 Para correr el Proyecto:
 npm run dev
+
+Crear cuenta en Git
