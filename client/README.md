@@ -2,10 +2,11 @@ KPI
 
 Proyecto para Grupo Eco
 
-Para instalar npm correr el siguiente comando en carpeta root KPI
+Para instalar npm correr el siguiente comando en carpeta root KPI:
+
 npm i -g
 
 Para correr el Proyecto:
 npm run dev
 
-Crear cuenta en Git..
+Crear una cuenta de Github con el correo de octane y solicitar accesos a administrador.
