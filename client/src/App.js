@@ -1,4 +1,5 @@
 import React from "react"
+import { Navbar } from "./components/Navbar/Navbar"
 import { Home } from "./pages/Home"
 
 // hellocvxcvxvxvxvxcvxcsdasdasdasd
@@ -6,7 +7,7 @@ import { Home } from "./pages/Home"
 export const App = () => {
     return (
         <div>
-            <Home></Home>
+            <Navbar></Navbar>
         </div>
     )
 }
