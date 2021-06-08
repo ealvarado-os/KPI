@@ -4,9 +4,9 @@ import { Navbar } from '../components/Navbar/Navbar';
 
 export const Home = () => {
 
-    return (
-        <Fragment>
-        <h1>Home</h1>
-      </Fragment>
-    )
+  return (
+    <Fragment>
+      <h1>Home</h1>
+    </Fragment>
+  )
 }

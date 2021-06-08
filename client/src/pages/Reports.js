@@ -1,6 +1,5 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Bar, Line, Pie } from "react-chartjs-2";
-// import MUIDataTable from "mui-datatables";
 import MUIDataTable from "mui-datatables";
 import {
   Container,
@@ -12,7 +11,6 @@ import {
   Button,
 } from "semantic-ui-react";
 import axios from "axios";
-import examplejson from "../examplejson.json";
 
 const productsOptions = [
   { key: "Todos", text: "Todos", value: "Todos" },
@@ -160,12 +158,24 @@ export const Reports = () => {
 
   //funcion que consulta  la API para obtener el datos de gastos
   async function getGastos() {
-    const dataGraph = await axios.get("http://localhost:9000/api/GetGastos", {
-      params: { Opc: 1, IdCia: 1 },
-    },);
-    setDataGraph(dataGraph.data);
-    console.log(dataGraph);
+
+    try {
+
+      const dataGraph = await axios.get("http://localhost:9000/api/GetGastos", {
+        params: { Opc: 1, IdCia: 1 },
+      });
+
+      setDataGraph(dataGraph.data);
+      alert(dataGraph.data);
+      return dataGraph;
+
+    } catch (error) {
+      alert(error);
+      return dataGraph;
+
+    }
     return dataGraph;
+
   }
 
   return (
