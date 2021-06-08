@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Bar, Line, Pie } from "react-chartjs-2";
-import MUIDataTable from "mui-datatables";
+import { MUITable } from '../components/MUITable';
 import {
   Container,
   Grid,
@@ -79,10 +79,7 @@ const datasets = [
 const columns = ["Producto", "Marca", "Zona", "Estacion"];
 
 const data = [
-  ["Premium", "ARCO", "TIJUANA", "EL FLORIDO"],
-  ["Diesel", "ARCO", "TIJUANA", "VIA RAPIDA"],
-  ["Regular", "ARCO", "TIJUANA", "VIA RAPIDA"],
-  ["REgular", "UNBRANDED", "TIJUANA", "VIA RAPIDA"],
+  { Nombre: 'Marco', Edad: '13' }, { Nombre: 'Daly', Edad: '122' }
 ];
 
 const options = {
@@ -233,11 +230,9 @@ export const Reports = () => {
           {/* TABLA DE VENTAS */}
           <GridColumn verticalAlign="top" width={8}>
             <Header as="h1">Reportes</Header>
-            <MUIDataTable
+            <MUITable
               title={"Ventas"}
               data={data}
-              columns={columns}
-              options={options}
             />
           </GridColumn>
           {/* GRAFICA ZONAS */}
