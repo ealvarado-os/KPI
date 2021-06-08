@@ -1,4 +1,5 @@
 import React from "react"
+import { Navbar } from "./components/Navbar/Navbar"
 import { Home } from "./pages/Home"
 import { useSelector,useDispatch } from "react-redux"
 
@@ -11,7 +12,7 @@ export const App = () => {
     /* Redux */
     return (
         <div>
-            <Home></Home>
+            <Navbar></Navbar>
         </div>
     )
 }
