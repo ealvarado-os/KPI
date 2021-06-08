@@ -1,0 +1,67 @@
+[
+    {
+        "NOMBRE": "Francisco Javier Caudana C.",
+        "APLICADAS": 10,
+        "PROMEDIO": 3.9
+    },
+    {
+        "NOMBRE": "Roberto Jimenez",
+        "APLICADAS": 2,
+        "PROMEDIO": 2.5
+    },
+    {
+        "NOMBRE": "Jose Alberto Jordan",
+        "APLICADAS": 6,
+        "PROMEDIO": 4.666666
+    },
+    {
+        "NOMBRE": "Carlos Rodriguez",
+        "APLICADAS": 16,
+        "PROMEDIO": 4.25
+    },
+    {
+        "NOMBRE": "Gabriel Francisco Garcia Diaz",
+        "APLICADAS": 4,
+        "PROMEDIO": 4.25
+    },
+    {
+        "NOMBRE": "Karina Karla Ornelas Lopez",
+        "APLICADAS": 0,
+        "PROMEDIO": 0
+    },
+    {
+        "NOMBRE": "Arturo Cervantes Cazarez",
+        "APLICADAS": 8,
+        "PROMEDIO": 3.875
+    },
+    {
+        "NOMBRE": "Victor Duarte",
+        "APLICADAS": 15,
+        "PROMEDIO": 4.6
+    },
+    {
+        "NOMBRE": "Dorian Fletes",
+        "APLICADAS": 10,
+        "PROMEDIO": 3.8
+    },
+    {
+        "NOMBRE": "Julio Cesar Montiel",
+        "APLICADAS": 15,
+        "PROMEDIO": 4.933333
+    },
+    {
+        "NOMBRE": "José Antonio Ambrosio Soto",
+        "APLICADAS": 10,
+        "PROMEDIO": 2.9
+    },
+    {
+        "NOMBRE": "Edgar Barboza",
+        "APLICADAS": 25,
+        "PROMEDIO": 4.4
+    },
+    {
+        "NOMBRE": "Javier Abraham Moreno Perez",
+        "APLICADAS": 11,
+        "PROMEDIO": 4
+    }
+]

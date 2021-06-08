@@ -1,0 +1,5 @@
+get http://localhost:9000/
+
+###
+get http://localhost:9000/api/GetGastos 
+
