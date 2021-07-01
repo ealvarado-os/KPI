@@ -1,6 +1,7 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Bar, Line, Pie } from "react-chartjs-2";
-import { MUITable } from '../components/MUITable';
+import { MUITable } from "../components/MUITable";
+import { Chart } from "../components/Chart"
 import {
   Container,
   Grid,
@@ -26,75 +27,65 @@ const dateOptions = [
   { key: "Mayo", text: "Mayo", value: "Mayo" },
 ];
 
-const Labels = [
-  "EL FLORIDO",
-  "UNIVERSIDAD",
-  "TANAMA",
-  "MATAMOROS",
-  "CERRO DE LAS ABEJAS",
-  "BLVD 2000",
+const Labels =
+["ZONA BAJA SUR", "ZONA ENSENADA", "ZONA GUAYMAS", "ZONA HERMOSILLO", "ZONA JALISCO", "ZONA MEXICALI ", "ZONA NOGALES", "ZONA OBREGON", "ZONA SAN QUINTIN", "ZONA TIJUANA "]
+
+// [
+//   "EL FLORIDO",
+//   "UNIVERSIDAD",
+//   "TANAMA",
+//   "MATAMOROS",
+//   "CERRO DE LAS ABEJAS",
+//   "BLVD 2000",
+// ];
+const datasets =
+[
+{label: "Semana1", data:   [1655599.487, 1055898.066, 510760.933, 835341.594, 76629.573, 2208010.296, 1526542.632, 166819.867, 478737.555, 3302935.835], borderColor: "rgba(227,71,236,0.7)", backgroundColor: "rgba(227,71,236, 0.7)", fill: false}
+,{label: "Semana2", data:  [1655599.487, 1055898.066, 510760.933, 835341.594, 76629.573, 2208010.296, 1526542.632, 166819.867, 478737.555, 3302935.835], borderColor: "rgba(135,34,139,0.7)", backgroundColor: "rgba(135,34,139, 0.7)", fill: false}
+,{label: "Semana3", data:  [1655599.487, 1055898.066, 510760.933, 835341.594, 76629.573, 2208010.296, 1526542.632, 166819.867, 478737.555, 3302935.835], borderColor: "rgba(36,55,199,0.7)", backgroundColor: "rgba(36,55,199, 0.7)", fill: false}
+,{label: "Semana4", data:  [1655599.487, 1055898.066, 510760.933, 835341.594, 76629.573, 2208010.296, 1526542.632, 166819.867, 478737.555, 3302935.835], borderColor: "rgba(12,135,148,0.7)", backgroundColor: "rgba(12,135,148, 0.7)", fill: false}
+,{label: "Semana5", data:  [1655599.487, 1055898.066, 510760.933, 835341.594, 76629.573, 2208010.296, 1526542.632, 166819.867, 478737.555, 3302935.835], borderColor: "rgba(20,83,249,0.7)", backgroundColor: "rgba(20,83,249, 0.7)", fill: false}
 ];
-const datasets = [
-  {
-    label: "Premium",
-    data: [617594, 181045, 153060, 106519, 105162, 95072],
-    backgroundColor: [
-      "rgba(255, 99, 132, 0.6)",
-      "rgba(255, 99, 132, 0.6)",
-      "rgba(255, 99, 132, 0.6)",
-      "rgba(255, 99, 132, 0.6)",
-      "rgba(255, 99, 132, 0.6)",
-      "rgba(255, 99, 132, 0.6)",
-    ],
-  },
-  {
-    label: "Regular",
-    data: [617594, 181045, 153060, 106519, 105162, 95072],
-    backgroundColor: [
-      "rgba(0, 199, 132, 0.6)",
-      "rgba(0, 199, 132, 0.6)",
-      "rgba(0, 199, 132, 0.6)",
-      "rgba(0, 199, 132, 0.6)",
-      "rgba(0, 199, 132, 0.6)",
-      "rgba(0, 199, 132, 0.6)",
-      "rgba(0, 199, 132, 0.6)",
-    ],
-  },
-  {
-    label: "Diesel",
-    data: [716594, 185045, 356060, 508519, 409162, 196072],
-    backgroundColor: [
-      "rgba(169, 169, 169, 0.6)",
-      "rgba(169, 169, 169, 0.6)",
-      "rgba(169, 169, 169, 0.6)",
-      "rgba(169, 169, 169, 0.6)",
-      "rgba(169, 169, 169, 0.6)",
-      "rgba(169, 169, 169, 0.6)",
-      "rgba(169, 169, 169, 0.6)",
-    ],
-  },
-];
-
-//MUI
-const columns = ["Producto", "Marca", "Zona", "Estacion"];
-
-const data = [
-  { Nombre: 'Marco', Edad: '13' }, { Nombre: 'Daly', Edad: '122' }
-];
-
-const options = {
-  filterType: "checkbox",
-};
-
-//DATOS TABLA DYNAMICA
-const columnsDyn = ["Producto", "Marca", "Zona", "Estacion"];
-
-const dataDyn = [
-  ["Premium", "ARCO", "TIJUANA", "EL FLORIDO"],
-  ["Diesel", "ARCO", "TIJUANA", "VIA RAPIDA"],
-  ["Regular", "ARCO", "TIJUANA", "VIA RAPIDA"],
-  ["REgular", "UNBRANDED", "TIJUANA", "VIA RAPIDA"],
-];
+//  [
+//   {
+//     label: "Premium",
+//     data: [617594, 181045, 153060, 106519, 105162, 95072],
+//     backgroundColor: [
+//       "rgba(255, 99, 132, 0.6)",
+//       "rgba(255, 99, 132, 0.6)",
+//       "rgba(255, 99, 132, 0.6)",
+//       "rgba(255, 99, 132, 0.6)",
+//       "rgba(255, 99, 132, 0.6)",
+//       "rgba(255, 99, 132, 0.6)",
+//     ],
+//   },
+//   {
+//     label: "Regular",
+//     data: [617594, 181045, 153060, 106519, 105162, 95072],
+//     backgroundColor: [
+//       "rgba(0, 199, 132, 0.6)",
+//       "rgba(0, 199, 132, 0.6)",
+//       "rgba(0, 199, 132, 0.6)",
+//       "rgba(0, 199, 132, 0.6)",
+//       "rgba(0, 199, 132, 0.6)",
+//       "rgba(0, 199, 132, 0.6)",
+//       "rgba(0, 199, 132, 0.6)",
+//     ],
+//   },
+//   {
+//     label: "Diesel",
+//     data: [716594, 185045, 356060, 508519, 409162, 196072],
+//     backgroundColor: [
+//       "rgba(169, 169, 169, 0.6)",
+//       "rgba(169, 169, 169, 0.6)",
+//       "rgba(169, 169, 169, 0.6)",
+//       "rgba(169, 169, 169, 0.6)",
+//       "rgba(169, 169, 169, 0.6)",
+//       "rgba(169, 169, 169, 0.6)",
+//       "rgba(169, 169, 169, 0.6)",
+//     ],
+//   },
+// ];
 
 //DATA GRAFICA DINAMICA
 const LabelsDyn = [];
@@ -103,6 +94,8 @@ const datasetsDyn = [];
 
 //funcion que construye grafica de manera dinamica
 function chartConstructor(datos) {
+  // const datos = JSON.parse(datos);
+
   //var data
   var data = [];
   //var datasets
@@ -114,9 +107,10 @@ function chartConstructor(datos) {
   var g;
   var b;
 
+
   //CICLO QUE OBTIENE  labels
-  for (var j = 0; j < datos.length; j++) {
-    LabelsDyn.push(datos[j]["NOMBRE"]);
+  for (var j = 1; j < datos.length; j++) {
+     LabelsDyn.push(datos[j]["Zona"]);
   }
 
   //LLENANDO DATASETS PARA CADA ZONA
@@ -125,8 +119,8 @@ function chartConstructor(datos) {
     g = Math.floor(Math.random() * 255 + 1);
     b = Math.floor(Math.random() * 255 + 1);
 
-    if (Props[i] != "NOMBRE") {
-      for (let j = 0; j < datos.length; j++) {
+    if (Props[i] != "Zona") {
+      for (let j = 1; j < datos.length; j++) {
         data.push(datos[j][Props[i]]);
       }
 
@@ -147,32 +141,44 @@ export const Reports = () => {
   const [activeItem, setActiveItem] = useState("tijuana");
   const handleItemClick = (e, { name }) => setActiveItem(name);
   const [dataGraph, setDataGraph] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    getGastos();
-    // chartConstructor(examplejson);
+    // getGastos();
+    consultaMov();
   }, []);
+
+  const consultaMov = async () => {
+    try {
+      const { data } = await axios.get(
+        "http://localhost:9000/api/GetVentas",
+        { Opc: 1 }
+      );
+
+      if (data) {
+        setData(JSON.parse(data));
+        chartConstructor(data);
+      } else {
+        setData([]);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   //funcion que consulta  la API para obtener el datos de gastos
   async function getGastos() {
-
     try {
-
       const dataGraph = await axios.get("http://localhost:9000/api/GetGastos", {
         params: { Opc: 1, IdCia: 1 },
       });
 
       setDataGraph(dataGraph.data);
-      alert(dataGraph.data);
       return dataGraph;
-
     } catch (error) {
       alert(error);
       return dataGraph;
-
     }
-    return dataGraph;
-
   }
 
   return (
@@ -230,10 +236,7 @@ export const Reports = () => {
           {/* TABLA DE VENTAS */}
           <GridColumn verticalAlign="top" width={8}>
             <Header as="h1">Reportes</Header>
-            <MUITable
-              title={"Ventas"}
-              data={data}
-            />
+            <MUITable title={"Ventas"} data={data} />
           </GridColumn>
           {/* GRAFICA ZONAS */}
           <Grid.Column width={7}>
@@ -282,11 +285,8 @@ export const Reports = () => {
               <Header as="h1">Reportes</Header>
 
               <Grid.Column width={5}>
-                <Bar
-                  data={{
-                    labels: LabelsDyn,
-                    datasets: datasetsDyn,
-                  }}
+                <Chart
+                  data={data}
                 />
               </Grid.Column>
             </Grid.Row>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import MUIDataTable from "mui-datatables";
-
+import MUIDataTable from 'mui-datatables'
 export const MUITable = ({ data, title }) => {
     var columns = [];
     const [isLoading, setLoading] = useState(false);
