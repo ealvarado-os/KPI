@@ -14,7 +14,7 @@ import {
 
 
   const gasto = [{
-      Compania: '1',
+      Compania: '12',
      NoEstacion: '1',
       Estacion: '1',
     MontoCredito: '1',
