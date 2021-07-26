@@ -4,6 +4,7 @@ import OctaneLogo from "../../images/octanelogo.png";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { Reports } from "../../pages/Reports";
 import { Profile } from "../../pages/Profile";
+import { Gastos } from "../../pages/Gastos";
 import { Home } from "../../pages/Home";
 
 export const Navbar = () => {
@@ -41,6 +42,14 @@ export const Navbar = () => {
             onClick={handleItemClick}
           ></Menu.Item>
         </Link>
+        <Link to="/Gastos" style={styles.navbarMargintop}>
+          <Menu.Item
+          name="gastos"
+          component={Link}
+          active={activeItem === "Gastos"}
+          onClick={handleItemClick}
+          ></Menu.Item>
+        </Link>
         <Link to="/Profile" style={styles.navbarMargintop}>
           <Menu.Item
             name="perfil"
@@ -49,6 +58,7 @@ export const Navbar = () => {
             onClick={handleItemClick}
           ></Menu.Item>
         </Link>
+       
         <Menu.Menu position="right">
           <Menu.Item
             name="logout"
@@ -60,7 +70,9 @@ export const Navbar = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/Reports" component={Reports} />
+        <Route path="/Gastos" component={Gastos} />
         <Route path="/Profile" component={Profile} />
+
       </Switch>
     </Router>
   );
